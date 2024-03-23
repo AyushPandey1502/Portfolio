@@ -7,6 +7,7 @@ let typed = new Typed(".typing", {
 
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
+let isDarkMode = false; // Flag for dark mode
 
 const colors = [
   "#ffb56b",
@@ -33,20 +34,40 @@ const colors = [
   "#3d005e"
 ];
 
-circles.forEach(function (circle, index) {
+function applyColors() {
+  circles.forEach(function (circle, index) {
+    const color = isDarkMode ? brightenColor(colors[index % colors.length]) : colors[index % colors.length];
+    circle.style.backgroundColor = color;
+  });
+}
+
+function brightenColor(hex) {
+  const brightnessFactor = 1.5; // Increase brightness by 50%
+  // Convert hex to RGB
+  let r = parseInt(hex.substring(1, 3), 16);
+  let g = parseInt(hex.substring(3, 5), 16);
+  let b = parseInt(hex.substring(5, 7), 16);
+
+  // Increase brightness
+  r = Math.min(Math.round(r * brightnessFactor), 255);
+  g = Math.min(Math.round(g * brightnessFactor), 255);
+  b = Math.min(Math.round(b * brightnessFactor), 255);
+
+  // Convert RGB back to hex
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+circles.forEach(function (circle) {
   circle.x = 0;
   circle.y = 0;
-  circle.style.backgroundColor = colors[index % colors.length];
 });
 
 window.addEventListener("mousemove", function (e) {
   coords.x = e.clientX;
   coords.y = e.clientY;
-
 });
 
 function animateCircles() {
-
   let x = coords.x;
   let y = coords.y;
 
@@ -66,8 +87,9 @@ function animateCircles() {
 
   requestAnimationFrame(animateCircles);
 }
-
+applyColors(); // Apply initial colors
 animateCircles();
+
 
 
 // ====================== Page Loader Start =====================
@@ -84,28 +106,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // =============== Section Active Toggler Start ==================
-document.addEventListener("DOMContentLoaded", function() {
-  const navLinks = document.querySelectorAll('.navigation a');
+// document.addEventListener("DOMContentLoaded", function() {
+//   const navLinks = document.querySelectorAll('.navigation a');
   
-  navLinks.forEach(function(link) {
-    link.addEventListener('click', function(event) {
-      navLinks.forEach(function(link) {
-        link.classList.remove('active');
-      });
+//   navLinks.forEach(function(link) {
+//     link.addEventListener('click', function(event) {
+//       navLinks.forEach(function(link) {
+//         link.classList.remove('active');
+//       });
       
-      this.classList.add('active');
-      const targetId = this.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) {
-        event.preventDefault();
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+//       this.classList.add('active');
+//       const targetId = this.getAttribute('href').substring(1);
+//       const targetSection = document.getElementById(targetId);
+//       if (targetSection) {
+//         event.preventDefault();
+//         targetSection.scrollIntoView({ behavior: 'smooth' });
+//       }
+//     });
+//   });
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.navigation a');
+
+  navLinks.forEach(function(link) {
+      link.addEventListener('click', function(event) {
+          navLinks.forEach(function(link) {
+              link.classList.remove('active');
+          });
+
+          this.classList.add('active');
+
+          const targetId = this.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+
+          if (targetSection) {
+              event.preventDefault();
+              const offset = 50;
+              const targetOffset = targetSection.offsetTop - offset;
+
+              window.scrollTo({
+                  top: targetOffset,
+                  behavior: 'smooth'
+              });
+          }
+      });
   });
 });
+
 
 // =============== Section Active Toggler End ==================
 
 
 // =================== Section Changing Animation Start ==================
 
+// document.addEventListener('DOMContentLoaded', function() {
+//   const container = document.querySelector('.main-container');
+
+//   container.addEventListener('wheel', function(event) {
+//       container.scrollTop += event.deltaY;
+//       event.preventDefault(); 
+//   });
+// });

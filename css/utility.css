@@ -21,10 +21,14 @@
     color: var(--skin-color);
 }
 
+section{
+    padding: 100px 80px;
+}
+
 .section-title {
     flex: 0 0 100%;
     max-width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .section-title h2 {
@@ -59,12 +63,16 @@
     display: flex;
 }
 
+.grid{
+    display: grid;
+}
+
 .padd-15 {
     padding: 15px;
 }
 
 .connect a:hover {
-    color: var(--bg-black-100);
+    color: var(--text-black-900);
     background: var(--skin-color);
 }
 
@@ -84,8 +92,13 @@
     padding: 3px 9px;
     font-size: 20px;
     color: var(--skin-color);
-    margin-right: 20px;
+    margin-right: 15px;
     border-radius: 50%;
     border: 2px solid var(--skin-color);
     font-weight: 700;
+}
+
+.fa-code{
+    font-size: 18px;
+    font-weight: 900;
 }
