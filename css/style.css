@@ -25,7 +25,7 @@ body {
     line-height: 1.5;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    height: 6000px;
+    /* height: 6000px; */
     overflow-x: hidden;
 }
 
@@ -49,7 +49,7 @@ header {
     z-index: 10;
     background: var();
     background: var(--bg-black-100);
-    border: 2px solid var(--bg-black-50);
+    border-bottom: 2px solid var(--bg-black-50);
 }
 
 .logo {
@@ -149,7 +149,7 @@ section.active {
 }
 
 .scroll-watcher {
-    height: 8px;
+    height: 5px;
     position: fixed;
     z-index: 10;
     background-color: var(--skin-color);
@@ -383,37 +383,37 @@ section.about {
 
 /* ===================== Qualification Section Start ==================== */
 
-section.qualification{
+section.qualification {
     background: var(--bg-black-900);
     height: 100vh;
     color: var(--text-black-700);
 }
 
-.qualification-container{
+.qualification-container {
     grid-template-columns: repeat(2, 340px);
     column-gap: 4rem;
     justify-content: space-evenly;
 }
 
-.qualification-title{
+.qualification-title {
     font-size: 24px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin: 20px;
     color: var(--text-black-700);
     font-weight: 700;
 }
 
-.timeline-item{
+.timeline-item {
     position: relative;
     margin-bottom: 40px;
     padding-left: 3rem;
 }
 
-.timeline-item:last-child{
+.timeline-item:last-child {
     margin-bottom: 0;
 }
 
-.timeline-item::before{
+.timeline-item::before {
     content: '';
     width: 1px;
     position: absolute;
@@ -423,7 +423,7 @@ section.qualification{
     background-color: var(--skin-color);
 }
 
-.circle-dot{
+.circle-dot {
     position: absolute;
     left: 0;
     top: 0;
@@ -435,23 +435,23 @@ section.qualification{
     transition: .4s;
 }
 
-.timeline-item:hover .circle-dot{
+.timeline-item:hover .circle-dot {
     background-color: var(--bg-black-900);
 }
 
-.timeline-title{
+.timeline-title {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
 
-.timeline-text{
+.timeline-text {
     font-size: 16px;
     margin-bottom: 1px;
-    width: 200%;
+    width: 120%;
 }
 
-.timeline-date{
+.timeline-date {
     display: flex;
     align-items: center;
     column-gap: 0.4rem;
@@ -462,17 +462,104 @@ section.qualification{
 
 /* ===================== Qualification Section End ==================== */
 
+/* ========================= Skills Section Start ================= */
 
 
+section.skills{
+    background: var(--bg-black-100);
+    color: var(--text-black-700);
+}
+
+.skills-container {
+    grid-template-columns: 360px 320px;
+    column-gap: 3rem;
+    justify-content: center;
+    padding-top: 40px;
+}
 
 
+.skills-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.skills-icon,
+.skills-arrow {
+    font-size: 1.3rem;
+    color: var(--skin-color);
+}
+
+.skills-icon {
+    margin-right: 20px;
+}
+
+.skills-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.skills-subtitle {
+    font-size: 15px;
+}
+
+.skills-arrow{
+    margin-left: auto;
+}
+
+.skills-active .skills-arrow{
+    transform: rotate(-90deg);
+    transition: .3s;
+}
+
+.skills [data-content]{
+    display: none;
+}
+
+.skills-active[data-content]{
+    display: block;
+}
+
+.skills-list{
+    row-gap: 1.5rem;
+}
+
+.skills-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+.skills-name{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.skills-number{
+    font-size: 15px;
+}
+
+.skills-bar, .skills-percentage{
+    height: 5px;
+    border-radius: 5px;
+}
+
+.skills-bar{
+    background-color: var(--bg-black-50);
+    margin-bottom: 25px;
+}
+
+.skills-percentage{
+    display: block;
+    background-color: var(--skin-color);
+}
+
+/* ========================= Skills Section End ================= */
 
 
 /* ================== Contact Us Section Start ====================== */
 .contact {
-    padding: 40px 80px;
-
-    /* height: 100vh; */
     background: var(--bg-black-900);
 }
 
@@ -480,17 +567,17 @@ section.qualification{
     color: var(--skin-color);
     font-size: 25px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .contact-sub-title {
     color: var(--text-black-900);
     text-align: center;
     font-size: 17px;
-    /* margin: 20px; */
+    margin: 10px;
 }
 
-.contact .contact-container{
+.contact .contact-container {
     display: flex;
     margin-top: 30px;
     padding: 10px 10px;
@@ -509,7 +596,7 @@ section.qualification{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 4cqb;
     width: 50%;
 }
 
@@ -542,7 +629,7 @@ section.qualification{
     width: 50%;
 }
 
-.contact .contact-form .form-group{
+.contact .contact-form .form-group {
     margin-bottom: 30px;
     width: 100%;
 }
@@ -572,3 +659,5 @@ section.qualification{
     padding: 0 50px;
     width: 230px;
 }
+
+/* =========================== Contact Section Ends =========================== */

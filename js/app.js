@@ -95,7 +95,7 @@ animateCircles();
 // ====================== Page Loader Start =====================
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector('.main-container').style.display = 'none';
-  
+
   setTimeout(function () {
     document.querySelector('.loader').style.display = 'none';
     document.querySelector('.main-container').style.display = 'block';
@@ -108,13 +108,13 @@ document.addEventListener("DOMContentLoaded", function () {
 // =============== Section Active Toggler Start ==================
 // document.addEventListener("DOMContentLoaded", function() {
 //   const navLinks = document.querySelectorAll('.navigation a');
-  
+
 //   navLinks.forEach(function(link) {
 //     link.addEventListener('click', function(event) {
 //       navLinks.forEach(function(link) {
 //         link.classList.remove('active');
 //       });
-      
+
 //       this.classList.add('active');
 //       const targetId = this.getAttribute('href').substring(1);
 //       const targetSection = document.getElementById(targetId);
@@ -126,45 +126,74 @@ document.addEventListener("DOMContentLoaded", function () {
 //   });
 // });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('.navigation a');
+  const sections = document.querySelectorAll('section');
 
-  navLinks.forEach(function(link) {
-      link.addEventListener('click', function(event) {
-          navLinks.forEach(function(link) {
-              link.classList.remove('active');
-          });
+  function makeLinkActive() {
+    let currentSectionId = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionTop + sectionHeight - 50) {
+        currentSectionId = section.id;
+      }
+    });
 
-          this.classList.add('active');
+    navLinks.forEach(link => {
+      const targetId = link.getAttribute('href').substring(1);
+      if (targetId === currentSectionId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
 
-          const targetId = this.getAttribute('href').substring(1);
-          const targetSection = document.getElementById(targetId);
-
-          if (targetSection) {
-              event.preventDefault();
-              const offset = 50;
-              const targetOffset = targetSection.offsetTop - offset;
-
-              window.scrollTo({
-                  top: targetOffset,
-                  behavior: 'smooth'
-              });
-          }
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      navLinks.forEach(function (link) {
+        link.classList.remove('active');
       });
+      this.classList.add('active');
+
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        const offset = 40;
+        const targetOffset = targetSection.offsetTop - offset;
+
+        window.scrollTo({
+          top: targetOffset,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
+
+  window.addEventListener('scroll', makeLinkActive);
 });
 
 
-// =============== Section Active Toggler End ==================
+// ==================== Skills Tab Switcher ====================
+const tabs = document.querySelectorAll('[data-target]');
+const tabContent = document.querySelectorAll('[data-content]');
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    const target = document.querySelector(tab.dataset.target);
+    tabContent.forEach(tabContents => {
+      tabContents.classList.remove("skills-active");
+    })
+    target.classList.add('skills-active')
 
 
-// =================== Section Changing Animation Start ==================
+    tabs.forEach(tab => {
+      tab.classList.remove("skills-active");
+    })
+    tab.classList.add('skills-active')
+  })
+})
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   const container = document.querySelector('.main-container');
-
-//   container.addEventListener('wheel', function(event) {
-//       container.scrollTop += event.deltaY;
-//       event.preventDefault(); 
-//   });
-// });
