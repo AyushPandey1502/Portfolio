@@ -62,3 +62,30 @@
 .padd-15 {
     padding: 15px;
 }
+
+.connect a:hover {
+    color: var(--bg-black-100);
+    background: var(--skin-color);
+}
+
+.connect a:hover::after {
+    background-position: 100% 0;
+}
+
+.connect a:hover::before {
+    background-position: 100% 0;
+}
+
+.connect {
+    margin-bottom: 20px;
+}
+
+.connect a {
+    padding: 3px 9px;
+    font-size: 20px;
+    color: var(--skin-color);
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--skin-color);
+    font-weight: 700;
+}

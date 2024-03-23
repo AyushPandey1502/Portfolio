@@ -69,12 +69,43 @@ function animateCircles() {
 
 animateCircles();
 
+
+// ====================== Page Loader Start =====================
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector('.main-container').style.display = 'none';
-
+  
   setTimeout(function () {
     document.querySelector('.loader').style.display = 'none';
     document.querySelector('.main-container').style.display = 'block';
     document.querySelector('.content').style.display = 'block';
   }, 1500);
 });
+// ====================== Page Loader End =====================
+
+
+// =============== Section Active Toggler Start ==================
+document.addEventListener("DOMContentLoaded", function() {
+  const navLinks = document.querySelectorAll('.navigation a');
+  
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      navLinks.forEach(function(link) {
+        link.classList.remove('active');
+      });
+      
+      this.classList.add('active');
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        event.preventDefault();
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});
+
+// =============== Section Active Toggler End ==================
+
+
+// =================== Section Changing Animation Start ==================
+

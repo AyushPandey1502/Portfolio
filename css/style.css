@@ -23,11 +23,9 @@ html {
 
 body {
     line-height: 1.5;
-    font-size: 15px;
+    font-size: 16px;
     font-family: 'Poppins', sans-serif;
     height: 6000px;
-    /* color: var(--text-black-900); */
-
 }
 
 * {
@@ -102,6 +100,10 @@ header .logo a:after {
     margin-left: 40px;
 }
 
+.navigation a.active {
+    color: var(--skin-color);
+}
+
 .navigation a .fa {
     padding: 0px 6px;
 }
@@ -124,6 +126,51 @@ header .logo a:after {
     transform-origin: left;
     transform: scaleX(1);
 }
+
+/* ============================== Section Slide Animation Start ======================== */
+
+section.active {
+    z-index: 2;
+    opacity: 1;
+    animation: slideSection 1s ease;
+}
+
+@keyframes slideSection {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+
+    }
+}
+
+.scroll-watcher {
+    height: 8px;
+    position: fixed;
+    z-index: 10;
+    background-color: var(--skin-color);
+    width: 100%;
+    scale: 0 1;
+    /* transform-origin: left; */
+
+    /* border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
+
+    border-radius: 50px;
+
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+    to {
+        scale: 1 1;
+    }
+}
+
+/* ============================== Secction Slide Animation End ======================== */
 
 section.home .container {
     padding: 100px;
@@ -180,7 +227,7 @@ section .container .side-container .home-img img {
     z-index: 1;
 }
 
-section.home .home-img{
+section.home .home-img {
     width: 250px;
     height: 370px;
     box-shadow: 16px 14px 20px #0000008c;
@@ -195,10 +242,8 @@ section.home .home-img{
 
 section.home .home-img::before {
     content: "";
-    background-image: conic-gradient(
-        var(--skin-color) 20deg,
-        transparent 120deg
-    );
+    background-image: conic-gradient(var(--skin-color) 20deg,
+            transparent 120deg);
     width: 120%;
     height: 120%;
     position: absolute;
@@ -215,6 +260,7 @@ section.home .home-img::before {
 section.home .home-info .hello {
     font-size: 30px;
     margin: 16px 0;
+    color: var(--text-black-700);
 }
 
 section.home .home-info .hello span {
@@ -227,6 +273,7 @@ section.home .home-info .hello span {
 section.home .home-info .profession {
     font-size: 30px;
     margin: 15px 0;
+    color: var(--text-black-700);
 }
 
 .typing {
@@ -237,33 +284,6 @@ section.home .home-info p {
     margin-bottom: 50px;
     font-size: 18px;
     color: var(--text-black-700);
-}
-
-.connect {
-    margin-bottom: 20px;
-}
-
-.connect a {
-    padding: 3px 9px;
-    font-size: 20px;
-    color: var(--skin-color);
-    margin-left: 20px;
-    border-radius: 50%;
-    border: 2px solid var(--skin-color);
-    font-weight: 700;
-}
-
-.connect a:hover {
-    color: var(--bg-black-100);
-    background: var(--skin-color);
-}
-
-.connect a:hover::after {
-    background-position: 100% 0;
-}
-
-.connect a:hover::before {
-    background-position: 100% 0;
 }
 
 section.home .home-info button a {
@@ -281,6 +301,8 @@ section.home .home-info button {
 
 section.about {
     padding: 100px 80px;
+    height: 100vh;
+    background: var(--bg-black-100);
 }
 
 .about .about-content {
@@ -307,7 +329,7 @@ section.about {
 .about .about-content .about-text p {
     font-size: 17px;
     line-height: 25px;
-    color: var(--text-black-700);
+    color: var(--text-black-900);
 }
 
 .about .about-content .personal-info {
@@ -335,20 +357,86 @@ section.about {
 
 .about .about-content .personal-info .wrapper .info-item p span {
     font-weight: 400;
-    color: var(--text-black-700);
+    color: var(--text-black-900);
     margin-left: 4px;
     display: inline-block;
 }
 
-.about .about-content button{
+.about .about-content button {
     margin-top: 20px;
 }
 
-.about .about-content button a{
+.about .about-content button a {
     color: #ffffff;
 }
 
-.about .about-content button:hover{
+.about .about-content button:hover {
     color: var(--skin-color);
     background: transparent;
 }
+
+
+
+
+
+
+
+/* ================== Contact Us Section Start ====================== */
+.contact {
+    padding: 40px 80px;
+
+    /* height: 100vh; */
+    background: var(--bg-black-900);
+}
+
+.contact-title {
+    color: var(--skin-color);
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-sub-title {
+    color: var(--text-black-900);
+    text-align: center;
+    font-size: 17px;
+    margin: 20px;
+}
+
+.contact .contact-info-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-container .wrapper{
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.contact .contact-info-item .icon {
+    display: inline-block;
+  }
+  .contact .contact-info-item .icon .fa {
+    font-size: 20px;
+    color: var(--skin-color);
+  }
+  
+  .contact .contact-info-item h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+    margin: 10px 5px;
+  }
+  
+  .contact .contact-info-item p {
+    font-size: 16px;
+    line-height: 25px;
+    color: var(--text-black-700);
+    font-weight: 400;
+  }
