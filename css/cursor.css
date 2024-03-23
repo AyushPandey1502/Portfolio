@@ -1,0 +1,20 @@
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999;
+}
+
+.cursor{
+    position: fixed;
+    border-radius: 50%;
+    transition: .3s ease;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mix-blend-mode: darken;
+}

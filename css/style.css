@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap");
+
+:root {
+    --bg-black-900: #f2f2fc;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900: #302e4d;
+    --text-black-700: #504e70;
+    --skin-color: #ec1839;
+}
+
+body.dark {
+    --bg-black-900: #151515;
+    --bg-black-100: #222222;
+    --bg-black-50: #393939;
+    --text-black-900: #ffffff;
+    --text-black-700: #e9e9e9;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.5;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    height: 6000px;
+    /* color: var(--text-black-900); */
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    background: var();
+    background: var(--bg-black-100);
+}
+
+.logo {
+    top: 10px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+header .logo a {
+    color: var(--text-black-900);
+    font-weight: 700;
+    padding: 14px 30px;
+    margin: 5px -30px;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+header .logo a span {
+    font-family: "Clicker Script", cursive;
+    font-size: 40px;
+}
+
+header .logo a:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    bottom: 0;
+    left: 0;
+}
+
+header .logo a:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid var(--skin-color);
+    border-right: 5px solid var(--skin-color);
+    top: 0;
+    right: 0;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1rem;
+    color: var(--text-black-700);
+    font-weight: 700;
+    margin-left: 40px;
+}
+
+.navigation a .fa {
+    padding: 0px 6px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 4px;
+    background: var(--skin-color);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+section.home .container {
+    padding: 100px;
+    padding-bottom: 70px;
+    display: flex;
+}
+
+section .container .home-img {
+    max-width: 300px;
+    max-height: 400px;
+}
+
+.home {
+    background: var(--bg-black-900);
+    height: 100vh;
+}
+
+.home .side-container::after {
+    content: "";
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color);
+    left: 200px;
+    bottom: -40px;
+}
+
+.home .side-container::before {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-top: 10px solid var(--skin-color);
+    border-left: 10px solid var(--skin-color);
+    left: -30px;
+    top: -40px;
+}
+
+section.home .side-container {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 60px;
+}
+
+
+section .container .side-container .home-img img {
+    margin: auto;
+    border-radius: 10px;
+    height: 350px;
+    z-index: 1;
+}
+
+section.home .home-img{
+    width: 250px;
+    height: 370px;
+    box-shadow: 16px 14px 20px #0000008c;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #151515;
+}
+
+section.home .home-img::before {
+    content: "";
+    background-image: conic-gradient(
+        var(--skin-color) 20deg,
+        transparent 120deg
+    );
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    animation: rotate 2.5s linear infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+section.home .home-info .hello {
+    font-size: 30px;
+    margin: 16px 0;
+}
+
+section.home .home-info .hello span {
+    font-family: "Clicker Script", cursive;
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--skin-color);
+}
+
+section.home .home-info .profession {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.typing {
+    color: var(--skin-color);
+}
+
+section.home .home-info p {
+    margin-bottom: 50px;
+    font-size: 18px;
+    color: var(--text-black-700);
+}
+
+.connect {
+    margin-bottom: 20px;
+}
+
+.connect a {
+    padding: 3px 9px;
+    font-size: 20px;
+    color: var(--skin-color);
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--skin-color);
+    font-weight: 700;
+}
+
+.connect a:hover {
+    color: var(--bg-black-100);
+    background: var(--skin-color);
+}
+
+.connect a:hover::after {
+    background-position: 100% 0;
+}
+
+.connect a:hover::before {
+    background-position: 100% 0;
+}
+
+section.home .home-info button a {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+section.home .home-info button:hover a {
+    color: var(--skin-color);
+}
+
+section.home .home-info button {
+    width: 200px;
+}
+
+section.about {
+    padding: 100px 80px;
+}
+
+.about .about-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.about .about-content .about-text {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.about .about-content .about-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.about .about-content .about-text h3 span {
+    color: var(--skin-color);
+}
+
+.about .about-content .about-text p {
+    font-size: 17px;
+    line-height: 25px;
+    color: var(--text-black-700);
+}
+
+.about .about-content .personal-info {
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-top: 40px;
+}
+
+.about .about-content .personal-info .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about .about-content .personal-info .wrapper .info-item {
+    max-width: 90%;
+}
+
+.about .about-content .personal-info .wrapper .info-item p {
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-black-900);
+    border-bottom: 1px solid var(--bg-black-50);
+}
+
+.about .about-content .personal-info .wrapper .info-item p span {
+    font-weight: 400;
+    color: var(--text-black-700);
+    margin-left: 4px;
+    display: inline-block;
+}
+
+.about .about-content button{
+    margin-top: 20px;
+}
+
+.about .about-content button a{
+    color: #ffffff;
+}
+
+.about .about-content button:hover{
+    color: var(--skin-color);
+    background: transparent;
+}
