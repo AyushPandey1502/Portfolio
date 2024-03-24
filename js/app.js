@@ -219,3 +219,22 @@ modalCloses.forEach((modalClose) => {
     })
   })
 })
+
+
+let mixerProject = mixitup('.project-container', {
+  selectors: {
+      target: '.project-card'
+  },
+  animation: {
+      duration: 300
+  }
+});
+
+const linkWork = document.querySelectorAll('.project-item');
+
+function activeWork() {
+  linkWork.forEach(item => item.classList.remove('active-project'));
+  this.classList.add('active-project');
+}
+
+linkWork.forEach(item => item.addEventListener("click", activeWork));

@@ -621,6 +621,96 @@ section.skills{
 
 /* ========================= Skills Section End ================= */
 
+
+/* ==================== Project Section Start ====================== */
+section.project{
+    background: var(--bg-black-900);
+    color: var(--text-black-700);
+}
+
+.project-subtitle{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--skin-color);
+}
+
+.project-container{
+    grid-template-columns: repeat(3, 355px);
+    gap: 50px;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.project-filters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    margin-bottom: 25px;
+}
+
+.project-item{
+    cursor: pointer;
+    color: var(--text-black-700);
+    padding: 0.5rem 3rem;
+    font-weight: 700;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.project-card{
+    background-color: var(--bg-black-100);
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--text-black-700);
+    box-shadow: 2px 2px;
+}
+
+.portfolio-item-details{
+    display: none;
+}
+
+.project-img{
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    height: 200px;
+    width: 330px;
+}
+
+.project-title{
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.project-button{
+    color: var(--skin-color);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    cursor: pointer;
+}
+
+.project-button-icon{
+    font-size: 10px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.project-button:hover .project-button-icon{
+    transform: translateX(5px);
+}
+
+.active-project{
+    background-color: var(--skin-color);
+    color: #ffffff;
+}
+
+/* ==================== Project Section End ====================== */
+
 /* ===================== Services Section Start ====================== */
 
 section.services {
