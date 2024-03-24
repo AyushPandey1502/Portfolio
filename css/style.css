@@ -29,6 +29,10 @@ body {
     overflow-x: hidden;
 }
 
+section{
+    border-bottom: 2px solid var(--bg-black-50);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -244,9 +248,9 @@ section .container .home-img {
     max-height: 400px;
 }
 
-.home {
+section.home {
     background: var(--bg-black-900);
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .home .side-container::after {
@@ -254,10 +258,11 @@ section .container .home-img {
     position: absolute;
     height: 80px;
     width: 80px;
+    /* padding: 10px 10px; */
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
-    left: 200px;
-    bottom: -40px;
+    right: 45%;
+    top: 80%;
 }
 
 .home .side-container::before {
@@ -267,8 +272,8 @@ section .container .home-img {
     width: 80px;
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
-    left: -30px;
-    top: -40px;
+    left: -50px;
+    top: -35px;
 }
 
 section.home .side-container {
@@ -621,10 +626,11 @@ section.skills{
 section.services {
     background: var(--bg-black-900);
     color: var(--text-black-700);
+    height: 100vh;
 }
 
 .services-container{
-    grid-template-columns: repeat(3, 250px);
+    grid-template-columns: repeat(4, 250px);
     justify-content: center;
     column-gap: 2rem;
 }
@@ -633,31 +639,35 @@ section.services {
     position: relative;
     background-color: var(--bg-black-100);
     padding: 6rem 0 2rem 2.5rem;
-    border-radius: 0.25rem;
+    border-radius: 10px;
     /* text-align: center; */
 }
 
 .services-icon{
+    /* display: inline; */
     display: block;
     font-size: 1.8rem;
     color: var(--skin-color);
     margin-bottom: 10px;
 }
 
+
 .services-subtitle{
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
     font-weight: 600;
     text-align: center;
 }
 
 .services-button{
     color: var(--skin-color);
-    font-size: 17px;
+    font-size: 15px;
+    font-weight: 600;
     display: flex;
     align-items: center;
     column-gap: 0.25rem;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 .services-button-icon{
@@ -667,6 +677,84 @@ section.services {
 
 .services-button:hover .services-button-icon{
     transform: translateX(0.5rem);
+}
+
+.services-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-black-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 8;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.active-modal{
+    opacity: 1;
+    visibility: visible;
+}
+
+.services-modal-content {
+    width: 500px;
+    position: relative;
+    padding: 4.5rem 2.5rem 2.5rem;
+    border-radius: 20px;
+    border-top: 2px solid var(--skin-color);
+    border-left: 2px solid var(--skin-color);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 2px;
+}
+
+.services-modal-close{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--skin-color);
+    cursor: pointer;
+}
+
+.services-modal-title, .services-modal-description{
+    text-align: center;
+}
+
+.services-modal-title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.services-modal-description{
+    font-size: 15px;
+    padding: 0.35rem;
+    margin-bottom: 10px;
+}
+
+.services-modal-services{
+    row-gap: 10px;
+}
+
+.services-modal-service{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.services-modal-icon{
+    color: var(--skin-color);
+    font-size: 18px;
+}
+
+.services-modal-info{
+    font-size: 15px;
 }
 
 /* ====================== Services Section End ======================== */

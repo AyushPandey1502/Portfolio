@@ -197,3 +197,25 @@ tabs.forEach(tab => {
   })
 })
 
+// ========================== Services Modal ===================
+const modalViews = document.querySelectorAll('.services-modal');
+const modalBtns = document.querySelectorAll('.services-button');
+const modalCloses = document.querySelectorAll('.services-modal-close');
+
+let modal = function(modalClick){
+  modalViews[modalClick].classList.add('active-modal');
+}
+
+modalBtns.forEach((modelBtn, i) => {
+  modelBtn.addEventListener('click', () => {
+    modal(i);
+  })
+})
+
+modalCloses.forEach((modalClose) => {
+  modalClose.addEventListener("click", () => {
+    modalViews.forEach((modalView) => {
+      modalView.classList.remove('active-modal');
+    })
+  })
+})
