@@ -370,7 +370,7 @@ section.home .home-info button {
 
 section.about {
     padding: 100px 80px;
-    height: 100vh;
+    /* height: 100vh; */
     background: var(--bg-black-100);
 }
 
@@ -449,7 +449,7 @@ section.about {
 
 section.qualification {
     background: var(--bg-black-900);
-    height: 100vh;
+    /* height: 100vh; */
     color: var(--text-black-700);
 }
 
@@ -709,12 +709,105 @@ section.project{
     color: #ffffff;
 }
 
+/* =========== Project Description Pop Up ================ */
+
+.portfolio-popup{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-black-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    z-index: 8;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    color: var(--text-black-700);
+}
+
+.portfolio-popup.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio-popup-inner{
+    background-color: var(--bg-black-100);
+    width: 1200px;
+    border-radius: 8px;
+    padding: 20px 20px;
+    position: relative;
+    align-items: center;
+}
+
+.portfolio-popup-content{
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 10px;
+    border: 2px solid var(--skin-color);
+    border-bottom: 3px solid var(--text-black-700);
+    border-right: 3px solid var(--text-black-700);
+    box-shadow: 3px 3px;
+}
+
+.portfolio-popup-close{
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 20px;
+    color: var(--skin-color);
+    cursor: pointer;
+}
+
+.portfolio-popup-img{
+    border-radius: 5px;
+    height: 300px;
+    width: 500px;
+    margin: 20px 20px;
+}
+
+.portfolio-popup-subtitle{
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.details-title{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.details-description{
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.details-info li{
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.details-info li:last-child{
+    margin-bottom: 0;
+}
+
+.details-nfo li a{
+    text-transform: lowercase;
+    color: var(--skin-color);
+}
+
 /* ==================== Project Section End ====================== */
 
 /* ===================== Services Section Start ====================== */
 
 section.services {
-    background: var(--bg-black-900);
+    background: var(--bg-black-100);
     color: var(--text-black-700);
     height: 100vh;
 }
@@ -727,7 +820,7 @@ section.services {
 
 .services-content{
     position: relative;
-    background-color: var(--bg-black-100);
+    background-color: var(--bg-black-900);
     padding: 6rem 0 2rem 2.5rem;
     border-radius: 10px;
     /* text-align: center; */

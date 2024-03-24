@@ -230,6 +230,8 @@ let mixerProject = mixitup('.project-container', {
   }
 });
 
+
+// ===================================
 const linkWork = document.querySelectorAll('.project-item');
 
 function activeWork() {
@@ -238,3 +240,55 @@ function activeWork() {
 }
 
 linkWork.forEach(item => item.addEventListener("click", activeWork));
+
+
+
+// ====================
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("click", function(e) {
+      if (e.target.classList.contains('project-button')) {
+          togglePortfolioPopup();
+          portfolioItemDetails(e.target.parentElement);
+      }
+  });
+
+  document.querySelector(".portfolio-popup-close").addEventListener("click", togglePortfolioPopup);
+
+  function togglePortfolioPopup() {
+      const portfolioPopup = document.querySelector(".portfolio-popup");
+      if (portfolioPopup) {
+          portfolioPopup.classList.toggle("open");
+      }
+  }
+
+  function portfolioItemDetails(portfolioItem) {
+    console.log("portfolioItemDetails function called");
+    const thumbnailImg = document.querySelector(".pp-thumbnail img");
+    console.log("thumbnailImg:", thumbnailImg);
+    const subTitleSpan = document.querySelector(".portfolio-popup-subtitle span");
+    console.log("subTitleSpan:", subTitleSpan);
+    const popupBody = document.querySelector(".portfolio-popup-body");
+    console.log("popupBody:", popupBody);
+
+    console.log("portfolioItemDetails function called");
+    const thumbnail = document.querySelector(".project-img");
+    console.log("thumbnailImg:", thumbnail);
+    const subTitle = document.querySelector(".portfolio-title");
+    console.log("subTitleSpan:", subTitle);
+    const popup= document.querySelector(".portfolio-item-details");
+    console.log("popupBody:", popup);
+
+    
+
+      if (thumbnailImg) {
+          thumbnailImg.src = portfolioItem.querySelector('.project-img').src;
+      }
+      if (subTitleSpan) {
+          subTitleSpan.innerHTML = portfolioItem.querySelector(".project-title").innerHTML;
+      }
+      if (popupBody) {
+          popupBody.innerHTML = portfolioItem.querySelector(".portfolio-item-details").innerHTML;
+      }
+  }
+});
