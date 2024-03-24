@@ -129,6 +129,65 @@ header .logo a:after {
     transform: scaleX(1);
 }
 
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navigation ul li {
+    display: flex;
+    background-color: var(--bg-black-100);
+    border: 2px solid var(--bg-black-50);
+    border-top: none;
+}
+
+.navigation ul li a {
+    display: flex;
+    padding: 8px 0px;
+    margin-top: 8px;
+    font-size: 18px;
+    color: var(--text-black-900);
+    /* text-align: center; */
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation .dropdown {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.navigation .dropdown i{
+    padding: 2px 2px;
+    margin-right: 5px;
+}
+
+.navigation .dropdown ul {
+    display: none;
+    position: absolute;
+    /* top: 100%;
+    left: 0; */
+    width: 220px;
+    text-align: left;
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--border-color);
+}
+
+.navigation .dropdown:hover ul {
+    display: block;
+    z-index: 15;
+}
+
+/* Adjust the margin of the dropdown ul */
+.navigation .dropdown ul li {
+    margin: 0;
+    padding: 10px;
+}
+
+
+
+
 /* ============================== Section Slide Animation Start ======================== */
 
 section.active {
@@ -557,6 +616,60 @@ section.skills{
 
 /* ========================= Skills Section End ================= */
 
+/* ===================== Services Section Start ====================== */
+
+section.services {
+    background: var(--bg-black-900);
+    color: var(--text-black-700);
+}
+
+.services-container{
+    grid-template-columns: repeat(3, 250px);
+    justify-content: center;
+    column-gap: 2rem;
+}
+
+.services-content{
+    position: relative;
+    background-color: var(--bg-black-100);
+    padding: 6rem 0 2rem 2.5rem;
+    border-radius: 0.25rem;
+    /* text-align: center; */
+}
+
+.services-icon{
+    display: block;
+    font-size: 1.8rem;
+    color: var(--skin-color);
+    margin-bottom: 10px;
+}
+
+.services-subtitle{
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.services-button{
+    color: var(--skin-color);
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    cursor: pointer;
+}
+
+.services-button-icon{
+    font-size: 15px;
+    transition: transform .3s;
+}
+
+.services-button:hover .services-button-icon{
+    transform: translateX(0.5rem);
+}
+
+/* ====================== Services Section End ======================== */
 
 /* ================== Contact Us Section Start ====================== */
 .contact {

@@ -7,7 +7,7 @@ let typed = new Typed(".typing", {
 
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
-let isDarkMode = false; // Flag for dark mode
+let isDarkMode = false;
 
 const colors = [
   "#ffb56b",

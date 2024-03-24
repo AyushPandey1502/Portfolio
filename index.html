@@ -53,14 +53,21 @@
             </div>
             <nav class="navigation">
                 <a href="#home" class="active"><i class="fa fa-home"></i>Home</a>
-                <a href="#about"><i class="fa fa-user"></i>About</a>
+                <div class="dropdown">
+                    <a href="#about"><i class="fa fa-user"></i>About</a>
+                    <ul>
+                        <li><a href="#qualification"><i class="fa-solid fa-pen-to-square"></i>Qualifications<i
+                                    class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#experience"><i class="fa-solid fa-clipboard-list"></i>Experiences</a></li>
+                    </ul>
+                </div>
+                <a href="#projects"><i class="fa-solid fa-diagram-project"></i>Projects</a>
                 <a href="#services"><i class="fa fa-list"></i>Services</a>
                 <a href="#contact"><i class="fa fa-comments"></i>Contact</a>
                 <button class="btn">Hire Me</button>
-
             </nav>
-
         </header>
+
         <div class="nav-toggler">
             <span></span>
         </div>
@@ -156,7 +163,7 @@
         </section>
 
         <section class="qualification section">
-            <div data-heading="My Journey" class="section-title">
+            <div class="section-title" id="qualification">
                 <h2>Qualification</h2>
             </div>
             <div class="qualification-container grid">
@@ -250,7 +257,7 @@
                     </div>
 
                     <div class="skills-content">
-                        <div class="skills-group skills-active" data-content id ='frontend'>
+                        <div class="skills-group skills-active" data-content id='frontend'>
                             <div class="skilld-list grid">
                                 <div class="skills-data">
                                     <div class="skills-title">
@@ -290,7 +297,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="skills-group" data-content id ='compc'>
+                        <div class="skills-group" data-content id='compc'>
                             <div class="skilld-list grid">
                                 <div class="skills-data">
                                     <div class="skills-title">
@@ -330,7 +337,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="skills-group" data-content id ='ai-ml'>
+                        <div class="skills-group" data-content id='ai-ml'>
                             <div class="skilld-list grid">
                                 <div class="skills-data">
                                     <div class="skills-title">
@@ -374,7 +381,91 @@
                 </div>
         </section>
 
+        <!-- ============================= Skills Section Ends ====================== -->
 
+
+        <!-- ================= Services Section Start ===================== -->
+        <section class="services section" id="services">
+            <div class="section-title">
+                <h2>Services</h2>
+            </div>
+            <div class="services-subtitle">
+                <h3>What I Offer</h3>
+            </div>
+
+            <div class="services-container grid">
+                <div class="services-content">
+                    <div>
+                        <i class="fa-solid fa-satellite-dish services-icon"></i>
+                        <h3 class="services-title">
+                            Web <br> Designer
+                        </h3>
+                    </div>
+
+                    <span class="services-button">
+                        View More <i class="fa-solid fa-arrow-right services-button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <i class="fa-regular fa-circle-xmark"></i>
+                            <h3 class="services-modal-title">Web Designer</h3>
+                            <p class="services-modal-description">
+                                Services with more than 2 years of experience. Provide quality work to clients and
+                                companies.
+                            </p>
+
+                            <ul class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="fa-solid fa-circle-check services-modal-icon"></i>
+                                    <p class="services-modal-info">I develop the user interface.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="fa-solid fa-circle-check services-modal-icon"></i>
+                                    <p class="services-modal-info">Web page development.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="fa-solid fa-circle-check services-modal-icon"></i>
+                                    <p class="services-modal-info">I create ux element interactions.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="fa-solid fa-circle-check services-modal-icon"></i>
+                                    <p class="services-modal-info">I position your company brand.</p>
+                                </li>
+                                <li class="services-modal-service">
+                                    <i class="fa-solid fa-circle-check services-modal-icon"></i>
+                                    <p class="services-modal-info">Design and mockupsof products for companies.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-content">
+                    <div>
+                        <i class="fa-solid fa-satellite-dish services-icon"></i>
+                        <h3 class="services-title">
+                            Web <br> Designer
+                        </h3>
+                    </div>
+
+                    <span class="services-button">
+                        View More <i class="fa-solid fa-arrow-right services-button-icon"></i>
+                    </span>
+                </div>
+                <div class="services-content">
+                    <div>
+                        <i class="fa-solid fa-pen-to-square services-icon"></i>
+                        <h3 class="services-title">
+                            Web <br> Designer
+                        </h3>
+                    </div>
+
+                    <span class="services-button">
+                        View More <i class="fa-solid fa-arrow-right services-button-icon"></i>
+                    </span>
+                </div>
+            </div>
+        </section>
 
 
 
