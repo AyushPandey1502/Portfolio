@@ -72,7 +72,8 @@ section{
 }
 
 .connect a:hover {
-    color: var(--text-black-900);
+    /* color: var(--text-black-100); */
+    color: #ffffff;
     background: var(--skin-color);
 }
 
