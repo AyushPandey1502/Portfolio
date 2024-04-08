@@ -151,46 +151,9 @@ header .logo a:after {
     margin-top: 8px;
     font-size: 18px;
     color: var(--text-black-900);
-    /* text-align: center; */
     align-items: center;
     justify-content: center;
 }
-
-.navigation .dropdown {
-    position: relative;
-    display: inline-block;
-    border-radius: 10px;
-}
-
-.navigation .dropdown i {
-    padding: 2px 2px;
-    margin-right: 5px;
-}
-
-.navigation .dropdown ul {
-    display: none;
-    position: absolute;
-    /* top: 100%;
-    left: 0; */
-    width: 220px;
-    text-align: left;
-    background-color: var(--bg-black-100);
-    border: 1px solid var(--border-color);
-}
-
-.navigation .dropdown:hover ul {
-    display: block;
-    z-index: 15;
-}
-
-/* Adjust the margin of the dropdown ul */
-.navigation .dropdown ul li {
-    margin: 0;
-    padding: 10px;
-}
-
-
-
 
 /* ============================== Section Slide Animation Start ======================== */
 
