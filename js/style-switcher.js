@@ -21,8 +21,7 @@ function setActiveStyle(color) {
         else {
             style.setAttribute("disabled", "true");
         }
-    }
-    )
+    })
 }
 
 // Theme Light 
