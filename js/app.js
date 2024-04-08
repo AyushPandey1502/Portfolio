@@ -292,3 +292,14 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   }
 });
+
+
+function removeScrollWatcher() {
+  var scrollWatcherDiv = document.querySelector('.scroll-watcher');
+  if (scrollWatcherDiv && window.innerWidth < 1199) {
+      scrollWatcherDiv.remove();
+  }
+}
+
+removeScrollWatcher();
+window.addEventListener('resize', removeScrollWatcher);
