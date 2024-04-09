@@ -174,23 +174,23 @@ header .logo a:after {
     display: none;
     justify-content: center;
     align-items: center;
-    transition:all 0.3s ease ;
-  }
-  
-  .aside .nav-toggler span {
+    transition: all 0.3s ease;
+}
+
+.aside .nav-toggler span {
     height: 2px;
     width: 18px;
     background: var(--skin-color);
     display: inline-block;
     position: relative;
-  }
-  
-  .aside .nav-toggler.open span{
+}
+
+.aside .nav-toggler.open span {
     background: transparent;
-  }
-  
-  
-  .aside .nav-toggler span::before {
+}
+
+
+.aside .nav-toggler span::before {
     content: " ";
     height: 2px;
     width: 18px;
@@ -198,14 +198,14 @@ header .logo a:after {
     position: absolute;
     top: -6px;
     left: 0;
-  }
-  
-  .aside .nav-toggler.open span::before{
+}
+
+.aside .nav-toggler.open span::before {
     transform: rotate(45deg);
     top: 0;
-  }
-  
-  .aside .nav-toggler span::after {
+}
+
+.aside .nav-toggler span::after {
     content: " ";
     height: 2px;
     width: 18px;
@@ -213,11 +213,12 @@ header .logo a:after {
     position: absolute;
     top: 6px;
     left: 0;
-  }
-  .aside .nav-toggler.open span::after{
+}
+
+.aside .nav-toggler.open span::after {
     transform: rotate(-45deg);
     top: 0;
-  }
+}
 
 /* ============================== Section Slide Animation Start ======================== */
 
@@ -510,6 +511,7 @@ section.about .about-img-wrapper img {
 .about .about-content .personal-info .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
 }
 
 .about .about-content .personal-info .wrapper .info-item {
@@ -823,7 +825,7 @@ section.project {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    z-index: 8;
+    z-index: 20;
     opacity: 0;
     visibility: hidden;
     transition: .3s;
@@ -852,6 +854,7 @@ section.project {
     border-bottom: 3px solid var(--text-black-700);
     border-right: 3px solid var(--text-black-700);
     box-shadow: 3px 3px;
+    border-radius: 10px;
 }
 
 .portfolio-popup-close {
@@ -929,14 +932,20 @@ section.services {
 .services-icon {
     /* display: inline; */
     display: block;
-    font-size: 1.8rem;
+    font-size: 30px;
+    /* font-size: 1.8rem; */
     color: var(--skin-color);
     margin-bottom: 10px;
 }
 
+.services-title{
+    font-size: 20px;
+}
+
 
 .services-subtitle {
-    font-size: 20px;
+    font-size: 25px;
+    /* font-size: 20px; */
     margin-bottom: 50px;
     font-weight: 600;
     text-align: center;
@@ -944,7 +953,7 @@ section.services {
 
 .services-button {
     color: var(--skin-color);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -954,7 +963,7 @@ section.services {
 }
 
 .services-button-icon {
-    font-size: 15px;
+    font-size: 18px;
     transition: transform .3s;
 }
 
@@ -973,7 +982,7 @@ section.services {
     justify-content: center;
     align-items: center;
     padding: 0 1rem;
-    z-index: 8;
+    z-index: 20;
     opacity: 0;
     visibility: hidden;
     transition: .3s;
@@ -1295,6 +1304,10 @@ section.services {
     .services-subtitle {
         font-size: 17px;
     }
+
+    .portfolio-popup-content {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 991px) {
@@ -1347,6 +1360,7 @@ section.services {
 
 @media (max-width: 818px) {
     section.home .container {
+        padding-top: 70px;
         flex-direction: column;
     }
 
@@ -1361,7 +1375,7 @@ section.services {
     }
 
     .project-container {
-        grid-template-columns: repeat(1, 320px);
+        grid-template-columns: repeat(1, 300px);
     }
 
     .services-container {
@@ -1408,17 +1422,20 @@ section.services {
     .aside {
         width: 250px;
         left: -300px;
-      }
-      .aside.open{
+    }
+
+    .aside.open {
         left: 0;
-      }
-      .aside .nav-toggler{
+    }
+
+    .aside .nav-toggler {
         display: flex;
         left: 30px;
-      }
-      .aside .nav-toggler.open{
-        left: 300px;
-      }
+    }
+
+    .aside .nav-toggler.open {
+        left: 270px;
+    }
 
     .main-content {
         width: 100%;
@@ -1448,34 +1465,107 @@ section.services {
         margin-left: auto;
     }
 
-    .about .about-content .personal-info .wrapper .info-item{
+    .about .about-content .personal-info .wrapper .info-item {
         display: inline-block;
     }
-    .about .about-content .personal-info .wrapper .info-item p span{
-        display: inline;
-    }  
 
-    .timeline-text, .timeline-title{
+    .about .about-content .personal-info .wrapper .info-item p span {
+        display: inline;
+    }
+
+    .timeline-text,
+    .timeline-title {
+        overflow-wrap: break-word;
         word-wrap: break-word;
     }
 
-    .contact .contact-container .contact-form{
+    .contact .contact-container .contact-form {
         display: flex;
         width: 100%;
         padding: 10px 40px;
         justify-content: center;
     }
 
-    .project-filters, .project-item{
+    .project-filters,
+    .project-item {
         column-gap: 0px;
+        font-size: 15px;
+    }
+
+    
+    .project-item{
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .contact .contact-container {
         margin-left: 0px;
         gap: 50px;
     }
+
     .skills-list {
         padding: 1rem 1rem;
         row-gap: 0.8rem;
+    }
+
+    .portfolio-popup-content {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 10px;
+        padding: 20px 20px;
+    }
+
+    .portfolio-popup-img {
+        border-radius: 5px;
+        height: 200px;
+        width: 300px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .style-switcher {
+        top: 30px;
+    }
+
+    .portfolio-popup-subtitle {
+        font-size: 15px;
+    }
+    
+    .details-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    .details-description {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    
+    .details-info li {
+        margin-left: 8px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .portfolio-popup-inner {
+        width: 800px;
+        padding: 10px 10px;
+    }
+    
+    .portfolio-popup-img {
+        border-radius: 5px;
+        height: 180px;
+        width: 260px;
+        margin: auto 30px;
+    }
+
+    .portfolio-popup-close {
+        position: absolute;
+        top: 2rem;
+        right: 1.5rem;
+        font-size: 20px;
+        color: var(--skin-color);
+        cursor: pointer;
     }
 }

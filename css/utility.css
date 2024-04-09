@@ -72,7 +72,6 @@ section{
 }
 
 .connect a:hover {
-    /* color: var(--text-black-100); */
     color: #ffffff;
     background: var(--skin-color);
 }
@@ -91,7 +90,7 @@ section{
 }
 
 .connect a {
-    padding: 3px 9px;
+    padding: 4px 8px;
     font-size: 20px;
     color: var(--skin-color);
     margin-right: 15px;

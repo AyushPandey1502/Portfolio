@@ -349,20 +349,23 @@ handleViewportWidth();
 
 
 const navTogglerBtn = document.querySelector(".nav-toggler"),
-    aside = document.querySelector(".aside");
+    aside = document.querySelector(".aside"),
+    mainContent = document.querySelector(".main-content");
+
 navTogglerBtn.addEventListener("click", () => {
     asideSectionTogglerBtn();
-})
+});
+
+mainContent.addEventListener("click", () => {
+    if (aside.classList.contains("open")) {
+        asideSectionTogglerBtn();
+    }
+});
 
 function asideSectionTogglerBtn() {
-
-
-    {
-        aside.classList.toggle("open");
-        navTogglerBtn.classList.toggle("open");
-        for (let i = 0; i < totalSelection; i++) {
-            allSection[i].classList.toggle("open");
-
-        }
+    aside.classList.toggle("open");
+    navTogglerBtn.classList.toggle("open");
+    for (let i = 0; i < totalSelection; i++) {
+        allSection[i].classList.toggle("open");
     }
 }
