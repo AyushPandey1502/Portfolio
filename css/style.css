@@ -161,6 +161,64 @@ header .logo a:after {
     justify-content: center;
 }
 
+.aside .nav-toggler {
+    height: 30px;
+    width: 35px;
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    position: fixed;
+    left: 300px;
+    top: 20px;
+    border-radius: 5px;
+    background: var(--bg-black-100);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition:all 0.3s ease ;
+  }
+  
+  .aside .nav-toggler span {
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    display: inline-block;
+    position: relative;
+  }
+  
+  .aside .nav-toggler.open span{
+    background: transparent;
+  }
+  
+  
+  .aside .nav-toggler span::before {
+    content: " ";
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    position: absolute;
+    top: -6px;
+    left: 0;
+  }
+  
+  .aside .nav-toggler.open span::before{
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .aside .nav-toggler span::after {
+    content: " ";
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    position: absolute;
+    top: 6px;
+    left: 0;
+  }
+  .aside .nav-toggler.open span::after{
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
 /* ============================== Section Slide Animation Start ======================== */
 
 section.active {
@@ -1335,27 +1393,89 @@ section.services {
     .about-img-wrapper::before,
     .about-img-wrapper::after {
         height: 300px;
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        position: absolute;
     }
 
     section.about .about-img-wrapper img {
         height: 320px;
-        bottom: -60px;
         position: relative;
-        vertical-align: middle;
+        padding-left: 2rem;
     }
 
-    .aside{
-        display: none;
-    }
+    .aside {
+        width: 250px;
+        left: -300px;
+      }
+      .aside.open{
+        left: 0;
+      }
+      .aside .nav-toggler{
+        display: flex;
+        left: 30px;
+      }
+      .aside .nav-toggler.open{
+        left: 300px;
+      }
 
-    .main-content{
+    .main-content {
         width: 100%;
     }
 
-    section{
-        padding: 20px 35px;
+    section {
+        padding: 40px 35px;
     }
-    section.about{
-        padding: 20px 35px;
+
+    section.about {
+        padding: 40px 35px;
+    }
+
+    .about-img-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-img-wrapper::before {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-img-wrapper::after {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .about .about-content .personal-info .wrapper .info-item{
+        display: inline-block;
+    }
+    .about .about-content .personal-info .wrapper .info-item p span{
+        display: inline;
+    }  
+
+    .timeline-text, .timeline-title{
+        word-wrap: break-word;
+    }
+
+    .contact .contact-container .contact-form{
+        display: flex;
+        width: 100%;
+        padding: 10px 40px;
+        justify-content: center;
+    }
+
+    .project-filters, .project-item{
+        column-gap: 0px;
+    }
+
+    .contact .contact-container {
+        margin-left: 0px;
+        gap: 50px;
+    }
+    .skills-list {
+        padding: 1rem 1rem;
+        row-gap: 0.8rem;
     }
 }

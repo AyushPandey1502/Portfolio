@@ -303,3 +303,66 @@ function removeScrollWatcher() {
 
 removeScrollWatcher();
 window.addEventListener('resize', removeScrollWatcher);
+
+
+var fontSizeDecreased = false;
+
+function decreaseFontSize() {
+  if (!fontSizeDecreased) {
+    var allElements = document.querySelectorAll('*');
+    for (var i = 0; i < allElements.length; i++) {
+      var element = allElements[i];
+      var computedStyle = window.getComputedStyle(element);
+      var fontSize = parseFloat(computedStyle.fontSize);
+      if (!isNaN(fontSize) && fontSize > 0) {
+        element.style.fontSize = (fontSize * 0.95) + 'px';
+      }
+    }
+    fontSizeDecreased = true;
+  }
+}
+
+function restoreFontSize() {
+  var allElements = document.querySelectorAll('*');
+  for (var i = 0; i < allElements.length; i++) {
+    var element = allElements[i];
+    element.style.fontSize = '';
+  }
+  fontSizeDecreased = false;
+}
+
+function handleViewportWidth() {
+  var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+  if (viewportWidth < 800) {
+    decreaseFontSize();
+  } else {
+    restoreFontSize();
+  }
+}
+
+window.addEventListener('resize', function() {
+  handleViewportWidth();
+});
+
+handleViewportWidth();
+
+
+const navTogglerBtn = document.querySelector(".nav-toggler"),
+    aside = document.querySelector(".aside");
+navTogglerBtn.addEventListener("click", () => {
+    asideSectionTogglerBtn();
+})
+
+function asideSectionTogglerBtn() {
+
+
+    {
+        aside.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
+        for (let i = 0; i < totalSelection; i++) {
+            allSection[i].classList.toggle("open");
+
+        }
+    }
+}
