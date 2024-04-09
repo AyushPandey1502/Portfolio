@@ -222,6 +222,16 @@ section.home {
     /* height: 100vh; */
 }
 
+section.home .side-container {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-right: 5rem;
+}
+
 .home .side-container::after {
     content: "";
     position: absolute;
@@ -245,15 +255,6 @@ section.home {
     top: -35px;
 }
 
-section.home .side-container {
-    flex: 0 0 40%;
-    max-width: 40%;
-    text-align: center;
-    position: relative;
-    margin-top: 30px;
-    margin-left: 60px;
-    margin-right: 5rem;
-}
 
 
 section .container .side-container .home-img img {
@@ -365,7 +366,7 @@ section.about .about-img-wrapper {
 
 .about-img-wrapper::before {
     background-color: var(--skin-color);
-    animation: animate-before 8s ease-in-out infinite;
+    animation: animate-before 5s ease-in-out infinite;
 }
 
 .about-img-wrapper::after {
@@ -375,7 +376,7 @@ section.about .about-img-wrapper {
 
 .about-img-wrapper::after,
 .about-img {
-    animation: animate-after 8s ease-in-out infinite;
+    animation: animate-after 5s ease-in-out infinite;
 }
 
 section.about .about-img-wrapper img {
@@ -1008,6 +1009,7 @@ section.services {
     margin-top: 30px;
     padding: 10px 10px;
     justify-content: space-between;
+    gap: 80px;
 }
 
 .contact .contact-info-item {
@@ -1024,6 +1026,7 @@ section.services {
     flex-direction: column;
     margin-top: 4cqb;
     width: 50%;
+    overflow-wrap: break-word;
 }
 
 .contact .contact-info-item .icon {
@@ -1104,13 +1107,14 @@ section.services {
         position: fixed;
         padding: 0 0;
         border-right: 2px solid var(--bg-black-50);
+        padding: 5px 5px;
     }
 
     header .navigation {
         flex-direction: column;
     }
 
-    header .navigation a{
+    header .navigation a {
         border-bottom: 2px solid var(--bg-black-50);
         padding: 1rem;
         justify-content: center;
@@ -1119,34 +1123,36 @@ section.services {
         margin-left: 0;
     }
 
-    .navigation i{
+    .navigation i {
         margin-right: 10px;
     }
 
-    .logo{
+    .logo {
         position: fixed;
         top: 10%;
         font-size: 40;
         z-index: 2;
     }
-    header .logo a span{
+
+    header .logo a span {
         font-size: 60px;
     }
 
-    .connect a{
+    .connect a {
         font-size: 15px;
-        margin-right: 0px;
+        margin-right: 5px;
     }
 
     .scroll-watcher {
         display: none;
     }
 
-    .navigation button{
+    .navigation button {
         display: none;
     }
 
-    .home .side-container::after,.home .side-container::before{
+    .home .side-container::after,
+    .home .side-container::before {
         display: none;
     }
 
@@ -1158,17 +1164,198 @@ section.services {
         grid-template-columns: repeat(2, 250px);
         gap: 60px;
     }
-    .about-img-wrapper{
-        
+
+    .about-img {
+        height: 50px;
+    }
+
+    section.home .side-container {
+        margin-left: -10px;
+    }
+
+    .about-img-wrapper::before,
+    .about-img-wrapper::after {
+        height: 300px;
+    }
+
+    section.about .about-img-wrapper img {
+        height: 320px;
+        margin-left: -20px;
+        bottom: -60px;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    .about-myself {
+        width: 50%;
+    }
+
+    .personal-info .wrapper {
+        grid-column-gap: 100px;
+    }
+
+    section.home .home-info .profession,
+    section.home .home-info .hello {
+        font-size: 23px;
+    }
+
+    section.home .home-info .hello span {
+        font-size: 45px;
+    }
+
+    section.home .home-info p {
+        font-size: 17px;
+    }
+
+    section .container .side-container .home-img img {
+        height: 300px;
+        width: 250px;
+    }
+
+    section.home .home-img {
+        margin-top: 30px;
+        height: 320px;
+        width: 220px;
+        overflow: hidden;
+    }
+
+    .qualification-title {
+        font-size: 22px;
+    }
+
+    .contact-container .contact-info-item .connect {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .section-title h2 {
+        font-size: 35px;
+    }
+
+    .project-subtitle,
+    .services-subtitle {
+        font-size: 17px;
     }
 }
 
 @media (max-width: 991px) {
-    .services-container {
-        gap: 80px;
+    .project-container {
+        grid-template-columns: repeat(2, 250px);
+    }
+
+    .qualification-container {
+        grid-template-columns: repeat(1, 350px);
+        row-gap: 3rem;
+        align-items: center;
+    }
+
+    .skills-active .skills-arrow {
+        transform: rotate(180deg);
+        transition: .3s;
+        background-color: var(--skin-color);
+        color: #ffffff;
+        border-radius: 50%;
+        padding: 3px 3px;
+        margin-right: -4px;
+    }
+
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(1, 350px);
+    }
+
+    .skills-list {
+        margin-top: 20px;
+        border: 3px solid var(--skin-color);
+        border-radius: 10px;
+        padding: 20px 60px;
+        row-gap: 0.8rem;
+    }
+
+    .main-content {
+        width: 75%;
+    }
+
+    .aside {
+        width: 25%;
+    }
+
+    .contact .contact-container {
+        margin-left: -50px;
+        gap: 50px;
     }
 }
 
-/* @media (max-width: 767px) {
+@media (max-width: 818px) {
+    section.home .container {
+        flex-direction: column;
+    }
 
-} */
+    section.about .about-content {
+        flex-direction: column-reverse;
+        width: 100%;
+
+    }
+
+    .about .about-content .personal-info .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .project-container {
+        grid-template-columns: repeat(1, 320px);
+    }
+
+    .services-container {
+        grid-template-columns: repeat(1, 280px);
+        gap: 60px;
+    }
+
+    .contact-container .wrapper {
+        display: none;
+    }
+
+    .contact-container .contact-form {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .side-container {
+        display: none;
+    }
+
+    .about-myself {
+        width: 100%;
+    }
+
+    .about-text {
+        margin-top: 80px;
+    }
+
+    .about-img-wrapper::before,
+    .about-img-wrapper::after {
+        height: 300px;
+    }
+
+    section.about .about-img-wrapper img {
+        height: 320px;
+        bottom: -60px;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    .aside{
+        display: none;
+    }
+
+    .main-content{
+        width: 100%;
+    }
+
+    section{
+        padding: 20px 35px;
+    }
+    section.about{
+        padding: 20px 35px;
+    }
+}
