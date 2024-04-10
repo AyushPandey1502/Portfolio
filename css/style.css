@@ -1625,3 +1625,31 @@ section.services {
         width: 278px;
     }
 }
+
+@media (max-width: 437px){
+
+    .portfolio-popup-content{
+        width: 370px;
+        height: 600px;
+        padding: 5px;
+        row-gap: 0;
+        grid-template-rows: 0.8fr 1.2fr;
+    }
+
+    .portfolio-popup-img{
+        width: 310px;
+        margin-left: 8px;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    .details-info li{
+        margin-left: 15px;
+    }
+
+    .portfolio-popup-close {
+        top: 1rem;
+        right: 1.5rem;
+    }
+}
