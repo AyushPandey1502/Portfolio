@@ -191,7 +191,7 @@ header .logo a:after {
 
 
 .aside .nav-toggler span::before {
-    content: " ";
+    content: "";
     height: 2px;
     width: 18px;
     background: var(--skin-color);
@@ -206,7 +206,7 @@ header .logo a:after {
 }
 
 .aside .nav-toggler span::after {
-    content: " ";
+    content: "";
     height: 2px;
     width: 18px;
     background: var(--skin-color);
@@ -317,7 +317,7 @@ section.home .side-container {
 
 
 section .container .side-container .home-img img {
-    margin: auto;
+    margin: 0;
     /* border-radius: 10px; */
     height: 350px;
     width: 300px;
@@ -396,6 +396,9 @@ section.home .home-info button {
     width: 200px;
 }
 
+.home-btn{
+    margin-left: 0;
+}
 
 /* ========================== About Section Start ============================= */
 
@@ -778,8 +781,8 @@ section.project {
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 5px;
-    height: 200px;
-    width: 330px;
+    height: 180px;
+    width: 278px;
 }
 
 .project-title {
@@ -886,14 +889,14 @@ section.project {
 }
 
 .details-description {
-    font-size: 19px;
+    font-size: 17px;
     margin-bottom: 5px;
 }
 
 .details-info li {
     margin-bottom: 5px;
     text-transform: capitalize;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -938,7 +941,7 @@ section.services {
     margin-bottom: 10px;
 }
 
-.services-title{
+.services-title {
     font-size: 20px;
 }
 
@@ -1173,7 +1176,7 @@ section.services {
         align-items: center;
         position: fixed;
         padding: 0 0;
-        border-right: 2px solid var(--bg-black-50);
+        border-right: 3px solid var(--bg-black-50);
         padding: 5px 5px;
     }
 
@@ -1305,9 +1308,7 @@ section.services {
         font-size: 17px;
     }
 
-    .portfolio-popup-content {
-        grid-template-columns: 1fr;
-    }
+    
 }
 
 @media (max-width: 991px) {
@@ -1355,6 +1356,51 @@ section.services {
     .contact .contact-container {
         margin-left: -50px;
         gap: 50px;
+    }
+
+    .portfolio-popup-subtitle {
+        font-size: 15px;
+        padding-left: 15px;
+    }
+
+    .portfolio-popup-inner{
+        padding: 15px 15px;
+        width: 80%;
+    }
+
+    .portfolio-popup-content {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 10px;
+        padding: 20px 20px;
+    }
+
+    .portfolio-popup-img {
+        border-radius: 5px;
+        height: 250px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .details-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 15px 25px;
+    }
+
+    .details-description {
+        font-size: 15px;
+        margin: 5px 25px;
+    }
+
+    .details-info li {
+        margin-left: 6px;
+        font-size: 13px;
+    }
+    .project-img {
+        height: 150px;
+        width: 228px;
     }
 }
 
@@ -1492,8 +1538,7 @@ section.services {
         font-size: 15px;
     }
 
-    
-    .project-item{
+    .project-item {
         width: 50px;
         display: flex;
         align-items: center;
@@ -1524,39 +1569,36 @@ section.services {
         align-items: center;
     }
 
-    .style-switcher {
-        top: 30px;
-    }
-
     .portfolio-popup-subtitle {
         font-size: 15px;
     }
-    
+
     .details-title {
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 15px;
     }
-    
+
     .details-description {
         font-size: 15px;
         margin-bottom: 5px;
     }
-    
+
     .details-info li {
         margin-left: 8px;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 500;
     }
+
     .portfolio-popup-inner {
         width: 800px;
         padding: 10px 10px;
     }
-    
+
     .portfolio-popup-img {
         border-radius: 5px;
         height: 180px;
-        width: 260px;
+        width: 320px;
         margin: auto 30px;
     }
 
@@ -1567,5 +1609,9 @@ section.services {
         font-size: 20px;
         color: var(--skin-color);
         cursor: pointer;
+    }
+
+    .project-img{
+        width: 278px;
     }
 }

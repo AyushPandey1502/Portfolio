@@ -91,6 +91,16 @@ applyColors(); // Apply initial colors
 animateCircles();
 
 
+function scrollToConnect() {
+  var connectSection = document.getElementById('contact');
+  connectSection.scrollIntoView({ behavior: 'smooth' });
+}
+function scrollToTop() {
+  var connectSection = document.getElementById('home');
+  connectSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+
 
 // ====================== Page Loader Start =====================
 document.addEventListener("DOMContentLoaded", function () {
