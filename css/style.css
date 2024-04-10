@@ -299,8 +299,9 @@ section.home .side-container {
     /* padding: 10px 10px; */
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
-    right: 45%;
-    top: 80%;
+    top: 85%;
+    left: 130%;
+    margin-left: 13px;
 }
 
 .home .side-container::before {
@@ -319,14 +320,14 @@ section.home .side-container {
 section .container .side-container .home-img img {
     margin: 0;
     /* border-radius: 10px; */
-    height: 350px;
-    width: 300px;
+    height: 300px;
+    width: 250px;
     z-index: 1;
 }
 
 section.home .home-img {
-    height: 370px;
-    width: 250px;
+    height: 315px;
+    width: 265px;
     box-shadow: 16px 14px 20px #0000008c;
     border-radius: 10px;
     position: relative;
@@ -335,6 +336,10 @@ section.home .home-img {
     justify-content: center;
     align-items: center;
     background-color: #151515;
+}
+
+section.home .img-container {
+    padding: 0 0;
 }
 
 section.home .home-img::before {
@@ -353,6 +358,9 @@ section.home .home-img::before {
     }
 }
 
+section.home .home-info {
+    margin-left: 2.5rem;
+}
 
 section.home .home-info .hello {
     font-size: 30px;
@@ -396,7 +404,7 @@ section.home .home-info button {
     width: 200px;
 }
 
-.home-btn{
+.home-btn {
     margin-left: 0;
 }
 
@@ -443,7 +451,7 @@ section.about .about-img-wrapper {
 
 section.about .about-img-wrapper img {
     height: 600px;
-    margin-top: -100px;
+    margin-top: -80px;
     z-index: 2;
     position: relative;
     vertical-align: middle;
@@ -617,7 +625,7 @@ section.qualification {
 .timeline-text {
     font-size: 16px;
     margin-bottom: 1px;
-    width: 120%;
+    width: 100%;
 }
 
 .timeline-date {
@@ -874,6 +882,9 @@ section.project {
     height: 300px;
     width: 500px;
     margin: 20px 20px;
+    border: 2px solid var(--text-black-900);
+    border-right: 2px solid var(--skin-color);
+    border-bottom: 2px solid var(--skin-color);
 }
 
 .portfolio-popup-subtitle {
@@ -1221,11 +1232,6 @@ section.services {
         display: none;
     }
 
-    .home .side-container::after,
-    .home .side-container::before {
-        display: none;
-    }
-
     .project-container {
         grid-template-columns: repeat(2, 300px);
     }
@@ -1278,14 +1284,14 @@ section.services {
     }
 
     section .container .side-container .home-img img {
-        height: 300px;
-        width: 250px;
+        height: 260px;
+        width: 215px;
     }
 
     section.home .home-img {
         margin-top: 30px;
-        height: 320px;
-        width: 220px;
+        height: 280px;
+        width: 230px;
         overflow: hidden;
     }
 
@@ -1308,7 +1314,7 @@ section.services {
         font-size: 17px;
     }
 
-    
+
 }
 
 @media (max-width: 991px) {
@@ -1363,7 +1369,7 @@ section.services {
         padding-left: 15px;
     }
 
-    .portfolio-popup-inner{
+    .portfolio-popup-inner {
         padding: 15px 15px;
         width: 80%;
     }
@@ -1398,6 +1404,7 @@ section.services {
         margin-left: 6px;
         font-size: 13px;
     }
+
     .project-img {
         height: 150px;
         width: 228px;
@@ -1406,7 +1413,7 @@ section.services {
 
 @media (max-width: 818px) {
     section.home .container {
-        padding-top: 70px;
+        padding-top: 30px;
         flex-direction: column;
     }
 
@@ -1417,7 +1424,8 @@ section.services {
     }
 
     .about .about-content .personal-info .wrapper {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1fr, 600px);
+        column-gap: 20px;
     }
 
     .project-container {
@@ -1513,10 +1521,12 @@ section.services {
 
     .about .about-content .personal-info .wrapper .info-item {
         display: inline-block;
+        word-wrap: break-word;
     }
-
+    
     .about .about-content .personal-info .wrapper .info-item p span {
         display: inline;
+        word-wrap: break-word;
     }
 
     .timeline-text,
@@ -1611,7 +1621,7 @@ section.services {
         cursor: pointer;
     }
 
-    .project-img{
+    .project-img {
         width: 278px;
     }
 }

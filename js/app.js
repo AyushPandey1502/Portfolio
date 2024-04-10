@@ -379,3 +379,15 @@ function asideSectionTogglerBtn() {
         allSection[i].classList.toggle("open");
     }
 }
+
+
+window.addEventListener('resize', function() {
+  const height = window.innerHeight;
+  const width = window.innerWidth;
+
+  if (height < 857 && width < 991) {
+      document.getElementById('logo').style.display = 'none';
+  } else {
+      document.getElementById('logo').style.display = 'block';
+  }
+});

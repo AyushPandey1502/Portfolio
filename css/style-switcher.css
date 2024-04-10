@@ -1,7 +1,7 @@
 .style-switcher{
     position: fixed;
     right: 0;
-    bottom: 100px;
+    bottom: 30%;
     padding: 15px;
     width: 200px;
     border: 1px solid var(--bg-black-50);
