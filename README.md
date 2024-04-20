@@ -15,4 +15,4 @@
    - Open the project files using your preferred code editor.
 
 4. **Run the Application**: 
-   - Open the `index.html` file in a web browser to launch the weather app.
+   - Open the `index.html` file in a web browser to launch the portfolio app.
