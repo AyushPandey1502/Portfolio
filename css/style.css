@@ -1595,7 +1595,7 @@ section.services {
     }
 
     .details-info li {
-        margin-left: 8px;
+        margin-left: 5px;
         font-size: 14px;
         font-weight: 500;
     }
@@ -1645,7 +1645,7 @@ section.services {
     }
 
     .details-info li{
-        margin-left: 15px;
+        margin-left: 5px;
     }
 
     .portfolio-popup-close {
