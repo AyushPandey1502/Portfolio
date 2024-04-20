@@ -116,26 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // =============== Section Active Toggler Start ==================
-// document.addEventListener("DOMContentLoaded", function() {
-//   const navLinks = document.querySelectorAll('.navigation a');
-
-//   navLinks.forEach(function(link) {
-//     link.addEventListener('click', function(event) {
-//       navLinks.forEach(function(link) {
-//         link.classList.remove('active');
-//       });
-
-//       this.classList.add('active');
-//       const targetId = this.getAttribute('href').substring(1);
-//       const targetSection = document.getElementById(targetId);
-//       if (targetSection) {
-//         event.preventDefault();
-//         targetSection.scrollIntoView({ behavior: 'smooth' });
-//       }
-//     });
-//   });
-// });
-
 document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('.navigation a');
   const sections = document.querySelectorAll('section');
@@ -241,7 +221,7 @@ let mixerProject = mixitup('.project-container', {
 });
 
 
-// ===================================
+// ===================== Portfolio Popup =====================
 const linkWork = document.querySelectorAll('.project-item');
 
 function activeWork() {
@@ -253,7 +233,7 @@ linkWork.forEach(item => item.addEventListener("click", activeWork));
 
 
 
-// ====================
+// ==================== Portfolio Popup Button ===========================
 
 document.addEventListener("DOMContentLoaded", function() {
   document.addEventListener("click", function(e) {
@@ -317,6 +297,7 @@ window.addEventListener('resize', removeScrollWatcher);
 
 var fontSizeDecreased = false;
 
+// function to resize the font size on decresing the window width
 function decreaseFontSize() {
   if (!fontSizeDecreased) {
     var allElements = document.querySelectorAll('*');
@@ -332,6 +313,7 @@ function decreaseFontSize() {
   }
 }
 
+// function to restore the font size of the window width
 function restoreFontSize() {
   var allElements = document.querySelectorAll('*');
   for (var i = 0; i < allElements.length; i++) {
@@ -357,7 +339,7 @@ window.addEventListener('resize', function() {
 
 handleViewportWidth();
 
-
+// function to add Event Listner on navTogglerBtn for aside section 
 const navTogglerBtn = document.querySelector(".nav-toggler"),
     aside = document.querySelector(".aside"),
     mainContent = document.querySelector(".main-content");
@@ -372,6 +354,7 @@ mainContent.addEventListener("click", () => {
     }
 });
 
+// function to toggle the visibility of aside section
 function asideSectionTogglerBtn() {
     aside.classList.toggle("open");
     navTogglerBtn.classList.toggle("open");
