@@ -30,7 +30,7 @@
     right: 100%;
     border: 1px solid var(--bg-black-50);
     margin-right: 25px;
-    cursor: po;
+    cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 50%;
 }
