@@ -98,7 +98,8 @@
                             <a href="https://www.linkedin.com/in/ayush-pandey-863613202/"><i
                                     class="fa-brands fa-linkedin-in"></i></a>
                             <a href="https://github.com/AyushPandey1502"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://leetcode.com/u/AyushPandey1525/"><i class="fa-solid fa-laptop-code"></i></a>
+                            <a href="https://leetcode.com/u/AyushPandey1525/"><i
+                                    class="fa-solid fa-laptop-code"></i></a>
 
                         </div>
                         <button class="btn home-btn"><a href="#" download="AyushPandeyCV">Download CV</a></button>
@@ -477,8 +478,7 @@
                                 <li>Created - <span>24 January 2024</span></li>
                                 <li>Technologies - <span>HTML DTML CSS JS DJANGO BOOTSTRAP BEAUTIFUL-SOUP</span></li>
                                 <li>Role - <span>Complete</span></li>
-                                <li>View - <span><a
-                                            href="#">Visit
+                                <li>View - <span><a href="#">Visit
                                             GitHub</a></span></li>
                             </div>
                         </div>
@@ -776,7 +776,7 @@
             </section>
 
             <!-- ====================== Services Section Start ======================= -->
-            
+
             <!-- ====================== Contact Section Start ======================= -->
             <section class="contact section" id="contact">
                 <div class="container">
@@ -817,28 +817,29 @@
                         </div>
                     </div>
                     <div class="contact-form">
-                        <form action="contact">
+                        <form action="contact" id="contactForm">
                             <div class="row">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Name">
+                                    <input type="text" class="form-control" placeholder="Name" id="username">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Subject">
+                                    <input type="email" class="form-control" placeholder="Email" id="user-email">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
-                                    <textarea name="" class="form-control" id="" placeholder="Message"></textarea>
+                                    <input type="text" class="form-control" placeholder="Subject" id="subject">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <textarea name="" class="form-control" id="message"
+                                        placeholder="Message"></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item">
-                                    <button type="submit" class="btn">Send Message</button>
+                                    <button type="submit" class="btn" id="submit">Send Message</button>
                                 </div>
                             </div>
                         </form>
@@ -878,6 +879,41 @@
     <script src="js/style-switcher.js"></script>
     <script src="js/mixitup.min.js"></script>
     <script src="js/app.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCDz84N8NEokF_PDjPacTGIJnconGvfeS0",
+            authDomain: "jsportfolio-80cfa.firebaseapp.com",
+            projectId: "jsportfolio-80cfa",
+            storageBucket: "jsportfolio-80cfa.appspot.com",
+            messagingSenderId: "648437098304",
+            appId: "1:648437098304:web:29deac95019a05534a7ca5"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        // Get ref to database services
+        const db = getDatabase(app);
+
+        document.getElementById("submit").addEventListener('click', function (e) {
+            e.preventDefault();
+            set(ref(db, 'user/' + document.getElementById("username").value),
+                {
+                    username: document.getElementById("username").value,
+                    email: document.getElementById("user-email").value,
+                    subject: document.getElementById("subject").value,
+                    message: document.getElementById("message").value
+                });
+            alert("Message sent !!");
+            document.getElementById("contactForm").reset();
+        });
+    </script>
 </body>
 
 </html>
