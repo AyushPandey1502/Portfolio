@@ -103,15 +103,15 @@ function scrollToTop() {
 
 
 // ====================== Page Loader Start =====================
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector('.main-container').style.display = 'none';
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.querySelector('.main-container').style.display = 'none';
 
-  setTimeout(function () {
-    document.querySelector('.loader').style.display = 'none';
-    document.querySelector('.main-container').style.display = 'block';
-    document.querySelector('.content').style.display = 'block';
-  }, 1500);
-});
+//   setTimeout(function () {
+//     document.querySelector('.loader').style.display = 'none';
+//     document.querySelector('.main-container').style.display = 'block';
+//     document.querySelector('.content').style.display = 'block';
+//   }, 1500);
+// });
 // ====================== Page Loader End =====================
 
 
