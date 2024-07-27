@@ -514,8 +514,8 @@ section.about .about-img-wrapper img {
 }
 
 .about .about-content .personal-info {
-    flex: 0 0 60%;
-    max-width: 60%;
+    /* flex: 0 0 0%; */
+    max-width: 100%;
     margin-top: 40px;
 }
 
