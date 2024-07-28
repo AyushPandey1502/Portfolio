@@ -566,6 +566,10 @@ section.qualification {
     color: var(--text-black-700);
 }
 
+#achievements{
+    background: var(--bg-black-100);
+}
+
 .qualification-container {
     grid-template-columns: repeat(2, 340px);
     column-gap: 4rem;
